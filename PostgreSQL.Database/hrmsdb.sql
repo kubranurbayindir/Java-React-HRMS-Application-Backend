@@ -71,7 +71,6 @@ CREATE TABLE public.cv_skills
 (
     skill_id integer NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 ),
     skill_name character varying(100) NOT NULL,
-    tech_name character varying(100) NOT NULL,
     skill_degree character varying(20) NOT NULL,
     PRIMARY KEY (skill_id)
 );
