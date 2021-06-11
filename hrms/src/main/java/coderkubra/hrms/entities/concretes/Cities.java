@@ -1,8 +1,8 @@
 package coderkubra.hrms.entities.concretes;
 
 import java.util.List;
-import javax.persistence.*;
 
+import javax.persistence.*;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -15,18 +15,19 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "jobPosting"})
 @Entity
-@Table(name = "job_positions")
-public class JobPosition {
-
+@Table(name = "cities")
+public class Cities {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "position_id")
-	private int id;
+	@Column(name = "city_id")
+	private int idCity;
 	
-	@Column(name = "position")
-	private String position;
+	@Column(name = "city_name")
+	private String cityName;
 
-	@JsonIgnore
-	@OneToMany(mappedBy = "jobPosition")
+	@JsonIgnore //eklenmemesı durumunda tum bılgılerı frontendde get edıyor.
+	@OneToMany(mappedBy = "cities")
 	private List<JobPosting> jobPosting;
+
 }

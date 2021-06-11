@@ -9,31 +9,31 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import coderkubra.hrms.business.abstracts.JobPositionService;
+import coderkubra.hrms.business.abstracts.CvSocialService;
 import coderkubra.hrms.core.utilities.results.DataResults;
 import coderkubra.hrms.core.utilities.results.Results;
-import coderkubra.hrms.entities.concretes.JobPosition;
+import coderkubra.hrms.entities.concretes.CvSocialMedia;
 
 @RestController
-@RequestMapping("/api/job-positions")
-public class JobControllers {
-
-	private JobPositionService jobPositionService;
-
+@RequestMapping("/api/cv-social-media")
+public class CvSocialMediaControllers {
+	
+	private CvSocialService cvSocialService;
+	
 	@Autowired
-	public JobControllers(JobPositionService jobPositionService) {
+	public CvSocialMediaControllers(CvSocialService cvSocialService) {
 		super();
-		this.jobPositionService = jobPositionService;
+		this.cvSocialService = cvSocialService;
 	}
-	
-	@GetMapping("/getall") 
-	public  DataResults<List<JobPosition>> getAll(){  
-		return this.jobPositionService.getAll();
-	}
-	
+
 	@PostMapping("/add")
-	public Results add(@RequestBody JobPosition jobPosition) { // ekleme operasyoun
-		return this.jobPositionService.add(jobPosition);
+	public Results add( @RequestBody CvSocialMedia cvSocialMedia){
+		return this.cvSocialService.add(cvSocialMedia);
+		
 	}
 	
+	@GetMapping("/getall")
+	public DataResults<List<CvSocialMedia>> getAll(){
+		return this.cvSocialService.getAll();
+	}
 }

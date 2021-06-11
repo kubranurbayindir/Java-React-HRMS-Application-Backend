@@ -2,8 +2,8 @@ package coderkubra.hrms.business.abstracts;
 
 import java.util.List;
 
+import coderkubra.hrms.core.entities.User;
 import coderkubra.hrms.entities.concretes.Employers;
-import coderkubra.hrms.entities.concretes.User;
 
 public interface EmployerService {
 

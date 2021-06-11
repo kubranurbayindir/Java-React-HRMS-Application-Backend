@@ -7,9 +7,9 @@ import org.springframework.stereotype.Service;
 
 import coderkubra.hrms.business.abstracts.EmployerService;
 import coderkubra.hrms.dataAccess.abstracts.EmployersDao;
-import coderkubra.hrms.dataAccess.abstracts.UserDao;
 import coderkubra.hrms.entities.concretes.Employers;
-import coderkubra.hrms.entities.concretes.User;
+import coderkubra.hrms.core.dataAccess.UserDao;
+import coderkubra.hrms.core.entities.User;
 
 
 @Service

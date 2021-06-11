@@ -6,24 +6,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import coderkubra.hrms.business.abstracts.JobSeekerService;
-import coderkubra.hrms.dataAccess.abstracts.CandidatesDao;
-import coderkubra.hrms.entities.concretes.Candidates;
+import coderkubra.hrms.dataAccess.abstracts.JobSeekersDao;
+import coderkubra.hrms.entities.concretes.JobSeekers;
 
 @Service
 public class JobSeekerManager implements JobSeekerService{
 	
-	private CandidatesDao candidatesDao;
+	private JobSeekersDao jobSeekersDao;
 	
 	@Autowired
-	public JobSeekerManager(CandidatesDao candidatesDao) {
+	public JobSeekerManager(JobSeekersDao jobSeekersDao) {
 		super();
-		this.candidatesDao = candidatesDao;
+		this.jobSeekersDao = jobSeekersDao;
 	}
 
-	
 	@Override
-	public List<Candidates> getAll() {
-		return this.candidatesDao.findAll();
+	public List<JobSeekers> getAll() {
+		return this.jobSeekersDao.findAll();
 	}
 	
 	//@Override

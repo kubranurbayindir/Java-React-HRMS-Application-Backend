@@ -9,31 +9,31 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import coderkubra.hrms.business.abstracts.JobPositionService;
+import coderkubra.hrms.business.abstracts.CvExperienceService;
 import coderkubra.hrms.core.utilities.results.DataResults;
 import coderkubra.hrms.core.utilities.results.Results;
-import coderkubra.hrms.entities.concretes.JobPosition;
+import coderkubra.hrms.entities.concretes.CvExperience;
 
 @RestController
-@RequestMapping("/api/job-positions")
-public class JobControllers {
+@RequestMapping("/api/cv-experiences")
+public class CvExperienceControllers {
 
-	private JobPositionService jobPositionService;
+	private CvExperienceService cvExperienceService;
 
 	@Autowired
-	public JobControllers(JobPositionService jobPositionService) {
+	public CvExperienceControllers(CvExperienceService cvExperienceService) {
 		super();
-		this.jobPositionService = jobPositionService;
-	}
-	
-	@GetMapping("/getall") 
-	public  DataResults<List<JobPosition>> getAll(){  
-		return this.jobPositionService.getAll();
+		this.cvExperienceService = cvExperienceService;
 	}
 	
 	@PostMapping("/add")
-	public Results add(@RequestBody JobPosition jobPosition) { // ekleme operasyoun
-		return this.jobPositionService.add(jobPosition);
+	public Results add( @RequestBody CvExperience cvExperience){
+		return this.cvExperienceService.add(cvExperience);
+		
 	}
 	
+	@GetMapping("/getall")
+	public DataResults<List<CvExperience>> getAll(){
+		return this.cvExperienceService.getAll();
+	}
 }

@@ -9,31 +9,33 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import coderkubra.hrms.business.abstracts.JobPositionService;
+import coderkubra.hrms.business.abstracts.CvService;
 import coderkubra.hrms.core.utilities.results.DataResults;
 import coderkubra.hrms.core.utilities.results.Results;
-import coderkubra.hrms.entities.concretes.JobPosition;
+import coderkubra.hrms.entities.concretes.CV;
 
 @RestController
-@RequestMapping("/api/job-positions")
-public class JobControllers {
-
-	private JobPositionService jobPositionService;
+@RequestMapping("/api/cv")
+public class CvControllers {
+	
+	private CvService cvService;
 
 	@Autowired
-	public JobControllers(JobPositionService jobPositionService) {
+	public CvControllers(CvService cvService) {
 		super();
-		this.jobPositionService = jobPositionService;
-	}
-	
-	@GetMapping("/getall") 
-	public  DataResults<List<JobPosition>> getAll(){  
-		return this.jobPositionService.getAll();
+		this.cvService = cvService;
 	}
 	
 	@PostMapping("/add")
-	public Results add(@RequestBody JobPosition jobPosition) { // ekleme operasyoun
-		return this.jobPositionService.add(jobPosition);
+	public Results add( @RequestBody CV cv){
+		return this.cvService.add(cv);
+		
 	}
 	
+	@GetMapping("/getall")
+	public DataResults<List<CV>> getAll(){
+		return this.cvService.getAll();
+	}
+
+
 }

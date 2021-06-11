@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import coderkubra.hrms.business.abstracts.JobSeekerService;
-import coderkubra.hrms.entities.concretes.Candidates;
+import coderkubra.hrms.entities.concretes.JobSeekers;
 
 @RestController
-@RequestMapping("/api/candidates")
+@RequestMapping("/api/job-seekers")
 public class JobSeekerControllers {
 
 	private JobSeekerService jobSeekerService;
@@ -23,7 +23,7 @@ public class JobSeekerControllers {
 	}
 	
 	@GetMapping("/getall") 
-	public List<Candidates> getAll(){  
+	public List<JobSeekers> getAll(){  
 		return this.jobSeekerService.getAll();
 	}
 	

@@ -9,31 +9,30 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import coderkubra.hrms.business.abstracts.JobPositionService;
+import coderkubra.hrms.business.abstracts.CvSkillService;
 import coderkubra.hrms.core.utilities.results.DataResults;
 import coderkubra.hrms.core.utilities.results.Results;
-import coderkubra.hrms.entities.concretes.JobPosition;
+import coderkubra.hrms.entities.concretes.CvSkills;
 
 @RestController
-@RequestMapping("/api/job-positions")
-public class JobControllers {
-
-	private JobPositionService jobPositionService;
+@RequestMapping("/api/cv-skills")
+public class CvSkillControllers {
+	private CvSkillService cvSkillService;
 
 	@Autowired
-	public JobControllers(JobPositionService jobPositionService) {
+	public CvSkillControllers(CvSkillService cvSkillService) {
 		super();
-		this.jobPositionService = jobPositionService;
-	}
-	
-	@GetMapping("/getall") 
-	public  DataResults<List<JobPosition>> getAll(){  
-		return this.jobPositionService.getAll();
+		this.cvSkillService = cvSkillService;
 	}
 	
 	@PostMapping("/add")
-	public Results add(@RequestBody JobPosition jobPosition) { // ekleme operasyoun
-		return this.jobPositionService.add(jobPosition);
+	public Results add( @RequestBody CvSkills cvSkills){
+		return this.cvSkillService.add(cvSkills);
+		
 	}
 	
+	@GetMapping("/getall")
+	public DataResults<List<CvSkills>> getAll(){
+		return this.cvSkillService.getAll();
+	}
 }

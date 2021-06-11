@@ -9,31 +9,32 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import coderkubra.hrms.business.abstracts.JobPositionService;
+import coderkubra.hrms.business.abstracts.CvForeignService;
 import coderkubra.hrms.core.utilities.results.DataResults;
 import coderkubra.hrms.core.utilities.results.Results;
-import coderkubra.hrms.entities.concretes.JobPosition;
+import coderkubra.hrms.entities.concretes.CvForeignLanguage;
 
 @RestController
-@RequestMapping("/api/job-positions")
-public class JobControllers {
-
-	private JobPositionService jobPositionService;
+@RequestMapping("/api/cv-foreign-language")
+public class CvForeignControllers {
+	
+	private CvForeignService cvForeignService;
 
 	@Autowired
-	public JobControllers(JobPositionService jobPositionService) {
+	public CvForeignControllers(CvForeignService cvForeignService) {
 		super();
-		this.jobPositionService = jobPositionService;
-	}
-	
-	@GetMapping("/getall") 
-	public  DataResults<List<JobPosition>> getAll(){  
-		return this.jobPositionService.getAll();
+		this.cvForeignService = cvForeignService;
 	}
 	
 	@PostMapping("/add")
-	public Results add(@RequestBody JobPosition jobPosition) { // ekleme operasyoun
-		return this.jobPositionService.add(jobPosition);
+	public Results add( @RequestBody CvForeignLanguage cvForeignLanguage){
+		return this.cvForeignService.add(cvForeignLanguage);
+		
 	}
 	
+	@GetMapping("/getall")
+	public DataResults<List<CvForeignLanguage>> getAll(){
+		return this.cvForeignService.getAll();
+	}
+
 }

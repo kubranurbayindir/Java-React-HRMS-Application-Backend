@@ -7,13 +7,20 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor 
+@NoArgsConstructor
 @Entity
-@Table(name = "employer")
+@Table(name = "employers")
 public class Employers {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id")
+	@Column(name = "employer_id")
 	private int idEmployer;
 	
 	@Column(name = "company_name")
@@ -22,45 +29,4 @@ public class Employers {
 	@Column(name = "web_address")
 	private String webAddress;
 	
-	public Employers() {
-		
-	}
-	
-	public Employers(int idEmployer,  String emailAddress, String password, String companyName, String webAddress) {
-		super();
-		this.idEmployer = idEmployer;
-		this.companyName = companyName;
-		this.webAddress = webAddress;
-	}
-
-
-	public int getIdEmployer() {
-		return idEmployer;
-	}
-
-
-	public void setIdEmployer(int idEmployer) {
-		this.idEmployer = idEmployer;
-	}
-
-
-	public String getCompanyName() {
-		return companyName;
-	}
-
-
-	public void setCompanyName(String companyName) {
-		this.companyName = companyName;
-	}
-
-
-	public String getWebAddress() {
-		return webAddress;
-	}
-
-
-	public void setWebAddress(String webAddress) {
-		this.webAddress = webAddress;
-	}
-
 }

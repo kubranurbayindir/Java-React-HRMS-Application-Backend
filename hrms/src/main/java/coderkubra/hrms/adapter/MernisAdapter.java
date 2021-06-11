@@ -2,23 +2,23 @@ package coderkubra.hrms.adapter;
 
 import java.rmi.RemoteException;
 
-import coderkubra.hrms.business.abstracts.UserCheckService;
-import coderkubra.hrms.entities.concretes.Candidates;
-import coderkubra.hrms.entities.concretes.User;
+import coderkubra.hrms.entities.concretes.JobSeekers;
+import coderkubra.hrms.core.abstracts.MernisCheckService;
+import coderkubra.hrms.core.entities.User;
 import tr.gov.nvi.tckimlik.WS.KPSPublicSoap;
 import tr.gov.nvi.tckimlik.WS.KPSPublicSoapProxy;
 
-public class MernisAdapter implements UserCheckService{
+public class MernisAdapter implements MernisCheckService{
 
 	@Override
-	public boolean CheckIfRealPerson(Candidates candidates) {
+	public boolean CheckIfRealPerson(JobSeekers jobSeekers) {
 		KPSPublicSoap soapClient = new KPSPublicSoapProxy();
 		boolean check = false;
 		try {
 			 try {
 				check = soapClient.TCKimlikNoDogrula(Long.parseLong
-						 (candidates.getIdentityNo()), candidates.getFirstName().toUpperCase(),
-							candidates.getLastName().toUpperCase(),candidates.getBirthDate());
+						 (jobSeekers.getIdentityNo()), jobSeekers.getFirstName().toUpperCase(),
+						 jobSeekers.getLastName().toUpperCase(),jobSeekers.getBirthDate());
 			} catch (RemoteException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
