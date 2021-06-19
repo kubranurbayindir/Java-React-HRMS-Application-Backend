@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import coderkubra.hrms.business.abstracts.CvService;
 import coderkubra.hrms.core.utilities.results.DataResults;
@@ -16,6 +17,7 @@ import coderkubra.hrms.entities.concretes.CV;
 
 @RestController
 @RequestMapping("/api/cv")
+@CrossOrigin
 public class CvControllers {
 	
 	private CvService cvService;
