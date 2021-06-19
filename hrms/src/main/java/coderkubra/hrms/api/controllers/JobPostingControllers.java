@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RestController;
 
 import coderkubra.hrms.business.abstracts.JobPostingService;
@@ -17,6 +18,7 @@ import coderkubra.hrms.entities.concretes.JobPosting;
 
 @RestController
 @RequestMapping("/api/job-posting")
+@CrossOrigin
 public class JobPostingControllers{
 	
 	private JobPostingService jobPostingService;
