@@ -49,3 +49,5 @@ public class JobPostingControllers{
 		return this.jobPostingService.delete(jobPosting);
 	}
 }
+
+
