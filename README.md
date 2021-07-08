@@ -1,5 +1,7 @@
 ## Human Resources Management System
 
+<b><h2>	⚡ Canlı Sunucuda Test Etmek İçin - BACKEND <a href="">Tıklayabilirsiniz.</a></h2></b>
+
 The project will be developed in accordance with S.O.L.I.D software principles. In the first run, api test was performed using Swagger and data extraction from the database was checked. Java and Java frameworks (Springboot , Spring JPA/Hibernate) will be used in the backend, React will be used in the frontend. PostgreSQL was chosen as the database.
  
 Dependencies: <br>
