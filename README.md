@@ -11,6 +11,13 @@ Dependencies: <br>
 -PostgreSQL Driver <br>
 -Lombok
 
+![image](https://user-images.githubusercontent.com/83094285/125317638-d4f2e680-e341-11eb-8ba8-3ad08dc8a126.png)
+
+All control commands have more than one work method in this way. 
+
+![image](https://user-images.githubusercontent.com/83094285/125317779-edfb9780-e341-11eb-8364-7c60e517143c.png)
+
+
 ### Req 1 : İş Arayanlar sisteme kayıt olabilmelidir.
 
 Kabul Kriterleri:
