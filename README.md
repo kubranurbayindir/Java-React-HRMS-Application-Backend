@@ -17,6 +17,8 @@ All control commands have more than one work method in this way.
 
 ![image](https://user-images.githubusercontent.com/83094285/125317779-edfb9780-e341-11eb-8364-7c60e517143c.png)
 
+![image](https://user-images.githubusercontent.com/83094285/125318396-7aa65580-e342-11eb-8208-d36a8f586052.png)
+
 
 ### Req 1 : İş Arayanlar sisteme kayıt olabilmelidir.
 
