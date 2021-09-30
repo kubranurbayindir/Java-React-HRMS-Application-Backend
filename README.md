@@ -75,6 +75,4 @@ Listede firmadı, genel iş pozisyonu adı, açık pozisyon adedi, yayın tarihi
 Liste, tablo formunda gelmelidir.
 Listede firmadı, genel iş pozisyonu adı, açık pozisyon adedi, yayın tarihi, son başvuru tarihi bilgileri olmalıdır.
 
-### Req 11 : İş verenler sistemdeki bir ilanı kapatabilmelidir. (Pasif ilan)
-
 
